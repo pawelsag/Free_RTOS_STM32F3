@@ -122,7 +122,7 @@ C_INCLUDES =  \
 -IInc \
 -IDrivers/STM32F3xx_HAL_Driver/Inc \
 -IDrivers/STM32F3xx_HAL_Driver/Inc/Legacy \
--IDrivers/CMSIS/Device/ST/STM32F3xx/Include \
+-IDrivers/CMSIS/Device \
 -IDrivers/CMSIS/Include \
 -IFreeRtos
 
