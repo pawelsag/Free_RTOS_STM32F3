@@ -6,6 +6,7 @@ void vApplicationStackOverflowHook( TaskHandle_t pxTask, char *pcTaskName );
 
 void init_task(void *params) {
   while (1) {
+    HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_8|GPIO_PIN_9);
     vTaskDelay(pdMS_TO_TICKS(1000));
   }
 }
@@ -19,9 +20,8 @@ int main(void)
 
   MX_GPIO_Init();
 
-  xTaskCreate(init_task, "init_task", configMINIMAL_STACK_SIZE * 5, NULL, 1, NULL);
+  xTaskCreate(init_task, "init_task", configMINIMAL_STACK_SIZE * 1, NULL, 1, NULL);
   vTaskStartScheduler();
-
   while (1)
   {
   }
