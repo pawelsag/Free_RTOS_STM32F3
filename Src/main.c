@@ -2,6 +2,7 @@
 #include "main.h"
 #include "FreeRTOS.h"
 #include "task.h"
+void vApplicationStackOverflowHook( TaskHandle_t pxTask, char *pcTaskName );
 
 void init_task(void *params) {
   while (1) {
@@ -26,3 +27,14 @@ int main(void)
   }
 }
 
+void vApplicationStackOverflowHook( TaskHandle_t pxTask, char *pcTaskName )
+{
+  ( void ) pcTaskName;
+  ( void ) pxTask;
+
+  /* Run time stack overflow checking is performed if
+  configCHECK_FOR_STACK_OVERFLOW is defined to 1 or 2.  This hook
+  function is called if a stack overflow is detected. */
+  taskDISABLE_INTERRUPTS();
+  for( ;; );
+}

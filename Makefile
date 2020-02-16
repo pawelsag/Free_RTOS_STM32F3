@@ -55,7 +55,13 @@ Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_flash_ex.c \
 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c.c \
 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c_ex.c \
 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_exti.c \
-Startup/system_stm32f3xx.c
+Startup/system_stm32f3xx.c \
+FreeRtos/Source/list.c \
+FreeRtos/Source/queue.c \
+FreeRtos/Source/tasks.c \
+FreeRtos/Source/timers.c \
+FreeRtos/Source/port.c \
+FreeRtos/Source/heap_4.c
 
 # ASM sources
 ASM_SOURCES =  \
