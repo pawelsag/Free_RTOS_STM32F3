@@ -54,11 +54,11 @@ Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_flash_ex.c \
 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c.c \
 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_i2c_ex.c \
 Drivers/STM32F3xx_HAL_Driver/Src/stm32f3xx_hal_exti.c \
-startup/system_stm32f3xx.c
+Startup/system_stm32f3xx.c
 
 # ASM sources
 ASM_SOURCES =  \
-startup/startup_stm32f303xc.s
+Startup/startup_stm32f303xc.s
 
 
 #######################################
