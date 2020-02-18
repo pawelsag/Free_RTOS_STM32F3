@@ -38,3 +38,11 @@ void vApplicationStackOverflowHook( TaskHandle_t pxTask, char *pcTaskName )
   taskDISABLE_INTERRUPTS();
   for( ;; );
 }
+
+void
+HAL_Delay(volatile uint32_t millis)
+{
+  /* replace HAL library blocking delay function
+  * with FreeRTOS thread aware equivalent */
+  vTaskDelay(millis);
+}

@@ -111,7 +111,7 @@ AS_DEFS =
 C_DEFS =  \
 -DUSE_HAL_DRIVER \
 -DSTM32F303xC \
--D__ICCARM__
+
 
 
 # AS includes
