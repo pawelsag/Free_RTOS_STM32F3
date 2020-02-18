@@ -12,7 +12,7 @@ set(CMAKE_C_STANDARD 11)
 
 set(TARGET_NAME free_rtos_app)
 
-set(COMMON_FLAGS "-DSTM32F303xC -DUSE_HAL_DRIVER -fno-common -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -fdata-sections -ffunction-sections")
+set(COMMON_FLAGS "-DSTM32F303xC -DUSE_HAL_DRIVER -fno-common -fno-builtin -ffunction-sections -fdata-sections -mcpu=cortex-m4 -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -fdata-sections -ffunction-sections -fno-exceptions")
 set(CMAKE_C_FLAGS ${CMAKE_C_FLAGS} ${COMMON_FLAGS})
 set(CMAKE_CXX_FLAGS ${CMAKE_CXX_FLAGS} ${COMMON_FLAGS})
 
@@ -30,6 +30,7 @@ add_subdirectory(Drivers)
 add_subdirectory(FreeRtos)
 
 file(GLOB_RECURSE SRC_FILES_C Src/*.c)
+file(GLOB_RECURSE SRC_FILES_CXX Src/*.cc Src/*.cpp)
 
 add_executable(${ELF_FILE} ${SRC_FILES_C} ${SRC_FILES_CXX} Startup/startup_stm32f303xc.s Startup/system_stm32f3xx.c)
 

@@ -1,10 +1,12 @@
 
+extern "C"{
 #include "main.h"
 #include "FreeRTOS.h"
 #include "task.h"
 void vApplicationStackOverflowHook( TaskHandle_t pxTask, char *pcTaskName );
+}
 
-void init_task(void *params) {
+void init_task([[maybe_unused]]void *params) {
   while (1) {
     HAL_GPIO_TogglePin(GPIOE, GPIO_PIN_8|GPIO_PIN_9);
     vTaskDelay(pdMS_TO_TICKS(1000));
@@ -27,6 +29,7 @@ int main(void)
   }
 }
 
+extern "C"{
 void vApplicationStackOverflowHook( TaskHandle_t pxTask, char *pcTaskName )
 {
   ( void ) pcTaskName;
@@ -45,4 +48,5 @@ HAL_Delay(volatile uint32_t millis)
   /* replace HAL library blocking delay function
   * with FreeRTOS thread aware equivalent */
   vTaskDelay(millis);
+}
 }
